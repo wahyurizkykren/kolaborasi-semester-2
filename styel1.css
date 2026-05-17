@@ -1,0 +1,151 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Reusable Components */
+.btn-dark {
+    background: #1a2a3a;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #1a2a3a;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #BDD7EE; /* Warna biru muda sesuai gambar */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #BDD7EE;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Product Split Sections */
+.product-split {
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    gap: 50px;
+}
+
+.product-split.reverse {
+    flex-direction: row-reverse;
+}
+
+.product-text {
+    flex: 1;
+}
+
+.product-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.product-img-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-img-box img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 4px;
+}
+
+/* Footer */
+footer {
+    background-color: #f9f9f9;
+    padding: 60px 8%;
+    border-top: 1px solid #eee;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .hero, .product-split, .product-split.reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+    
+    .nav-links {
+        display: none; /* Sembunyikan menu di mobile untuk simpelnya */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Wahyu Tailwind Version</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        
+        /* Navbar Sticky Style */
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .bg-maroon-gradient {
+            background: linear-gradient(135deg, #450a0a 0%, #000000 100%);
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-float {
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .glow-text {
+            color: #fff;
+            text-shadow: 0 0 10px #fb7185, 0 0 20px #e11d48;
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { text-shadow: 0 0 10px #fb7185, 0 0 20px #e11d48; }
+            to { text-shadow: 0 0 20px #fda4af, 0 0 40px #f43f5e; }
+        }
+
+        .progress-line {
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
+        }
+
+        .animate-now {
+            width: var(--target-width);
+        }
+
+        @keyframes floatAndGlow {
+            0% {
+                transform: translateY(0px);
+                box-shadow: 0 0 10px rgba(225, 29, 72, 0.4), 0 0 20px rgba(225, 29, 72, 0.6), 0 0 40px rgba(127, 29, 29, 0.8);
+            }
+            50% {
+                transform: translateY(-15px);
+                box-shadow: 0 0 15px rgba(225, 29, 72, 0.2), 0 0 30px rgba(225, 29, 72, 0.4), 0 0 60px rgba(127, 29, 29, 0.6);
+            }
+            100% {
+                transform: translateY(0px);
+                box-shadow: 0 0 10px rgba(225, 29, 72, 0.4), 0 0 20px rgba(225, 29, 72, 0.6), 0 0 40px rgba(127, 29, 29, 0.8);
+            }
+        }
+
+        .animate-float-glow {
+            animation: floatAndGlow 4s ease-in-out infinite;
+        }
+
+        .shadow-neon-rose {
+            box-shadow: 0 0 10px rgba(225, 29, 72, 0.3), 0 0 20px rgba(225, 29, 72, 0.5), 0 0 40px rgba(127, 29, 29, 0.7);
+        }
+
+        /* Mobile Menu */
+        #mobile-nav.hidden { display: none; }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <nav class="nav-fixed border-b border-rose-900/30">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-rose-500">WAHYU</div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#" class="hover:text-rose-500 transition">Home</a>
+                <a href="#about" class="hover:text-rose-500 transition">About</a>
+                <a href="#skills-section" class="hover:text-rose-500 transition">Skills</a>
+                <a href="#portfolio" class="hover:text-rose-500 transition">Portfolio</a>
+            </div>
+
+            <button id="hamburger" class="md:hidden text-rose-500 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-nav" class="hidden md:hidden bg-black/95 border-t border-rose-900/30 flex flex-col p-6 space-y-4 font-bold">
+            <a href="#" class="hover:text-rose-500">HOME</a>
+            <a href="#about" class="hover:text-rose-500">ABOUT</a>
+            <a href="#skills-section" class="hover:text-rose-500">SKILLS</a>
+            <a href="#portfolio" class="hover:text-rose-500">PORTFOLIO</a>
+        </div>
+    </nav>
+
+    <section class="bg-maroon-gradient min-h-screen flex flex-col items-center justify-center text-center px-6 border-b border-red-900/50 overflow-hidden">
+        <p class="tracking-[0.5em] text-gray-400 text-sm mb-4" data-aos="zoom-out" data-aos-duration="1000">
+             WELCOME
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
+            I'm <span class="text-rose-500">WAHYU</span>
+        </h1>
+        
+        <div class="relative mb-8" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-delay="500">
+            <div class="absolute inset-0 bg-emerald-500/20 blur-3xl rounded-full"></div>
+            <img class="relative w-40 md:w-48 drop-shadow-[0_0_15px_rgba(52,211,153,0.5)]">
+        </div>
+
+        <p class="max-w-xl text-gray-300 mb-10 leading-relaxed" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
+            A passionate learner and Software Engineering student building modern digital solutions with clean code and intuitive design.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4">
+            <button class="bg-rose-700 hover:bg-rose-800 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg shadow-rose-900/20 transform hover:scale-110 active:scale-95" data-aos="zoom-in" data-aos-delay="900">
+                VIEW PROJECTS
+            </button>
+
+            <button class="border border-rose-700 text-rose-500 hover:bg-rose-900/20 font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-110 active:scale-95" data-aos="zoom-in" data-aos-delay="1100">
+                LET'S TALK
+            </button>
+        </div>
+    </section>
+        
+    <section class="py-20 px-6 container mx-auto">
+        <h2 id="services" class="text-4xl font-bold text-center mb-16 glow-text tracking-wider uppercase">
+            My Services
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white/5 p-8 rounded-2xl border-b-4 border-red-900 animate-float transition-all group hover:bg-white/10">
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🌐</div>
+                <h3 class="text-xl font-bold mb-2 text-white">Web Design</h3>
+                <p class="text-gray-400 text-sm">Menciptakan desain modern, ramah, dan responsif.</p>
+            </div>
+
+            <div class="bg-white/5 p-8 rounded-2xl border-b-4 border-red-900 animate-float delay-100 transition-all group hover:bg-white/10">
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🎨</div>
+                <h3 class="text-xl font-bold mb-2 text-white">UI/UX Design</h3>
+                <p class="text-gray-400 text-sm">Merancang pengalaman pengguna yang intuitif dan menarik.</p>
+            </div>
+
+            <div class="bg-white/5 p-8 rounded-2xl border-b-4 border-red-900 animate-float delay-200 transition-all group hover:bg-white/10">
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">💻</div>
+                <h3 class="text-xl font-bold mb-2 text-white">Development</h3>
+                <p class="text-gray-400 text-sm">Membangun website responsif dengan kode yang efisien.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 bg-red-950/20">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
+            
+            <div class="flex-1 bg-white/5 p-8 rounded-3xl border border-red-900/30 w-full">
+                <h2 class="text-3xl font-bold mb-10 text-center glow-text">About Me</h2>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Hello everyone, my name is Wahyu Rizky Setia Ramadhani, and you can call me Wahyu. I am 16 years old. I study at SMKN 1 Tengaran, where I major in RPL (Software Engineering). I am a Software Engineering (RPL) student interested in Web Development and UI/UX Design.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-black/40 p-3 rounded-lg border border-transparent hover:bg-rose-900/40 hover:border-rose-500/50 transition-all duration-300 cursor-default group">
+                        <span class="text-rose-500 block font-bold group-hover:text-rose-300 transition-colors">Age</span> 
+                        <span class="text-gray-300 group-hover:text-white">16 Years old</span>
+                    </div>
+
+                    <div class="bg-black/40 p-3 rounded-lg border border-transparent hover:bg-rose-900/40 hover:border-rose-500/50 transition-all duration-300 cursor-default group">
+                        <span class="text-rose-500 block font-bold group-hover:text-rose-300 transition-colors">School</span> 
+                        <span class="text-gray-300 group-hover:text-white">SMK 1 Tengaran</span>
+                    </div>
+
+                    <div class="bg-black/40 p-3 rounded-lg border border-transparent hover:bg-rose-900/40 hover:border-rose-500/50 transition-all duration-300 cursor-default group">
+                        <span class="text-rose-500 block font-bold group-hover:text-rose-300 transition-colors">Class</span> 
+                        <span class="text-gray-300 group-hover:text-white">X pplg 2</span>
+                    </div>
+
+                    <a href="recountext.html" class="bg-black/40 p-3 rounded-lg border border-transparent hover:bg-rose-900/40 hover:border-rose-500/50 transition-all duration-300 block group cursor-pointer">
+                        <span class="text-rose-500 block font-bold group-hover:text-rose-300 transition-colors">Recount text</span> 
+                        <span class="text-gray-300 group-hover:text-white flex items-center gap-1">
+                            Read more <span class="transform group-hover:translate-x-1 transition-transform">➔</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex-1 flex flex-col items-center justify-center text-center w-full" data-aos="fade-left">
+                <div class="inline-flex items-center justify-center p-1 rounded-full border-4 border-red-900 shadow-neon-rose animate-float-glow w-48 h-48 md:w-64 md:h-64 overflow-hidden bg-black">
+                    <img src="asset/foto formal.png" alt="Wahyu Rizky Setia Ramadhani" 
+                         class="w-full h-full aspect-square object-cover rounded-full">
+                </div>
+                
+                <h3 class="mt-8 text-xl font-bold tracking-[0.2em] uppercase text-rose-500 glow-text">
+                    WAHYU RIZKY SETIA RAMADHANI
+                </h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills-section" class="py-20 px-6 container mx-auto flex flex-col items-center">
+        <h2 class="text-3xl font-bold mb-10 text-center glow-text">Expertise & Skill Progress</h2>
+        
+        <div class="space-y-6 w-full max-w-2xl">
+            <div>
+                <div class="flex justify-between mb-2"><span>HTML/CSS</span><span>90%</span></div>
+                <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden">
+                    <div class="progress-line bg-rose-500 h-3 rounded-full" style="--target-width: 90%;"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex justify-between mb-2"><span>JavaScript</span><span>80%</span></div>
+                <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden">
+                    <div class="progress-line bg-rose-500 h-3 rounded-full" style="--target-width: 80%;"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex justify-between mb-2"><span>Tailwind</span><span>85%</span></div>
+                <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden">
+                    <div class="progress-line bg-rose-500 h-3 rounded-full" style="--target-width: 85%;"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex justify-between mb-2"><span>Bootstrap</span><span>80%</span></div>
+                <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden">
+                    <div class="progress-line bg-rose-500 h-3 rounded-full" style="--target-width: 80%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 px-6 container mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold inline-block border-b-2 border-rose-500 pb-2">My Portfolio</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-rose-500/50 transition-all group">
+                <div class="relative overflow-hidden">
+                    <img src="asset/ss prjk s1.jpeg" alt="Project 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-rose-400 font-bold mb-2">Portfolio 1</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ini adalah deskripsi tugas saya. Penjelasan singkat mengenai teknologi yang digunakan.</p>
+                    <a href="https://wahyurizkykren.github.io/kolaborasi-semester-1/ " class="block text-center bg-white/10 hover:bg-rose-500 hover:text-black py-2 rounded-lg text-sm font-semibold transition-colors">
+                        View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-rose-500/50 transition-all group">
+                <div class="relative overflow-hidden">
+                    <img src="asset/ss sekolah.png" alt="Project 2" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-rose-400 font-bold mb-2">Portfolio 2</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ini adalah deskripsi tugas saya. Mengelola data kehadiran dan status akademik siswa.</p>
+                     <a href="https://wahyurizkykren.github.io/tugas-2-/" target="_blank" class="block text-center bg-white/10 hover:bg-rose-500 hover:text-black py-2 rounded-lg text-sm font-semibold transition-colors">
+                        View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-rose-500/50 transition-all group">
+                <div class="relative overflow-hidden">
+                    <img src="asset/ss lingkungan.png" alt="Project 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-rose-400 font-bold mb-2">Portfolio 3</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ini adalah deskripsi tugas saya. Desain untuk perubahan lingkungan melalui workshop digital.</p>
+                    <a href="https://wahyurizkykren.github.io/environment/" target="_blank" class="block text-center bg-white/10 hover:bg-rose-500 hover:text-black py-2 rounded-lg text-sm font-semibold transition-colors">
+                        View Project
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center gap-8 mt-8">
+            <div class="bg-[#111] w-full md:w-[calc(33.333%-1.34rem)] rounded-2xl overflow-hidden border border-white/5 hover:border-rose-500/50 transition-all group">
+                <div class="relative overflow-hidden">
+                    <img src="asset/ss tgs 4.png" alt="Project 4" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-rose-400 font-bold mb-2">Portfolio 4</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ini adalah deskripsi tugas saya. Desain penjualan furnitur melalui workshop digital.</p>
+                   <a href="https://wahyurizkykren.github.io/tugas-4-furniture/" target="_blank" class="block text-center bg-white/10 hover:bg-rose-500 hover:text-black py-2 rounded-lg text-sm font-semibold transition-colors">
+                        View Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-[#111] w-full md:w-[calc(33.333%-1.34rem)] rounded-2xl overflow-hidden border border-white/5 hover:border-rose-500/50 transition-all group">
+                <div class="relative overflow-hidden">
+                    <img src="asset/ss tgs 5.png" alt="Project 5" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-rose-400 font-bold mb-2">Portfolio 5</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ini adalah deskripsi tugas saya. Desain pembelian tiket wisata hiburan dan event melalui workshop digital.</p>
+                   <a href="https://wahyurizkykren.github.io/tugas-5/" target="_blank" class="block text-center bg-white/10 hover:bg-rose-500 hover:text-black py-2 rounded-lg text-sm font-semibold transition-colors">
+                        View Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 bg-[#0a0a0a] border-t border-rose-900/20">
+        <div class="container mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="w-full md:w-2/5 space-y-8">
+                    <div class="relative inline-block">
+                        <img src="asset/wahyu 2.jpeg" alt="Wahyu Rizky Setia Ramadhani" class="w-32 h-32 rounded-full border-4 border-rose-800 object-cover shadow-[0_0_20px_rgba(225,29,72,0.3)]">
+                        <div class="absolute -bottom-2 -right-2 bg-rose-600 p-2 rounded-lg text-xs font-bold uppercase tracking-tighter text-white">
+                            Let's Talk
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-2">Wahyu Rizky Setia Ramadhani</h2>
+                        <p class="text-rose-500 font-medium mb-4">Software Engineering Student</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Sedang mencari peluang untuk berkolaborasi dalam proyek Web Development atau UI/UX Design. Jangan ragu untuk menyapa!
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/kyesheee?igsh=aWVlOTgzaWxwejBj" target="_blank" class="p-3 bg-rose-950/30 border border-rose-900/50 rounded-xl text-rose-500 hover:bg-rose-600 hover:text-white transition-all duration-300" title="Instagram @wahyu_rizky_s.r">
+                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@w4hyo0o?_r=1&_t=ZS-95yL9JmMXK8" target="_blank" class="p-3 bg-rose-950/30 border border-rose-900/50 rounded-xl text-rose-500 hover:bg-rose-600 hover:text-white transition-all duration-300" title="TikTok @wahyu_rizky">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.6-4.12-1.31a8.11 8.11 0 0 1-1.89-1.45v6.18a7.51 7.51 0 0 1-1.92 5.09c-1.57 1.83-4.04 2.82-6.44 2.51-2.41-.31-4.59-1.93-5.59-4.15a7.51 7.51 0 0 1-.58-5.35c.42-2.31 2.05-4.4 4.24-5.26 1.05-.41 2.19-.57 3.32-.47V7.27a4.34 4.34 0 0 0-2.39.81c-1.54 1.12-2.18 3.16-1.5 4.96.6 1.61 2.23 2.76 3.95 2.76 1.15.02 2.29-.46 3.01-1.35.53-.66.82-1.48.82-2.33V.02z"/></svg>
+                        </a>
+                        <a href="https://wa.me/6288802821012" target="_blank" class="p-3 bg-rose-950/30 border border-rose-900/50 rounded-xl text-rose-500 hover:bg-rose-600 hover:text-white transition-all duration-300" title="Hubungi via WhatsApp">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        </a>
+                        <a href="mailto:wahyu@example.com" class="p-3 bg-rose-950/30 border border-rose-900/50 rounded-xl text-rose-500 hover:bg-rose-600 hover:text-white transition-all duration-300" title="Email">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-3/5 bg-gradient-to-br from-[#1a050b] to-[#0d0d0d] p-8 rounded-3xl border border-rose-900/30 shadow-2xl">
+                    <form class="space-y-5">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-rose-500 uppercase tracking-widest ml-1">Your Identity</label>
+                            <input type="text" placeholder="Full Name" class="w-full bg-black/40 border border-rose-900/20 p-4 rounded-xl focus:border-rose-600 focus:ring-1 focus:ring-rose-600 outline-none transition-all text-white placeholder:text-gray-600">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-rose-500 uppercase tracking-widest ml-1">Email Address</label>
+                            <input type="email" placeholder="example@mail.com" class="w-full bg-black/40 border border-rose-900/20 p-4 rounded-xl focus:border-rose-600 focus:ring-1 focus:ring-rose-600 outline-none transition-all text-white placeholder:text-gray-600">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-rose-500 uppercase tracking-widest ml-1">Message</label>
+                            <textarea placeholder="Write your project idea here..." rows="4" class="w-full bg-black/40 border border-rose-900/20 p-4 rounded-xl focus:border-rose-600 focus:ring-1 focus:ring-rose-600 outline-none transition-all text-white placeholder:text-gray-600 resize-none"></textarea>
+                        </div>
+                        <button class="w-full bg-rose-600 hover:bg-rose-500 text-white font-extrabold py-4 rounded-xl shadow-[0_10px_20px_rgba(225,29,72,0.2)] hover:shadow-rose-600/40 transition-all flex justify-center items-center gap-3 active:scale-[0.98]">
+                            <span>SEND MESSAGE</span>
+                            <span class="text-xl">➔</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5 text-gray-500 text-sm">
+        <p>&copy; 2026 Wahyu Portofolio. Built with Tailwind CSS.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, 
+            easing: 'ease-out-back' 
+        });
+
+        // Logika Toggle Navbar Mobile
+        const btn = document.getElementById('hamburger');
+        const nav = document.getElementById('mobile-nav');
+
+        btn.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+        });
+
+        // Progress Bar Skill
+        const observerOptions = {
+            threshold: 0.5 
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-line');
+                    progressBars.forEach(bar => {
+                        bar.classList.add('animate-now');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.querySelector('#skills-section');
+        observer.observe(skillsSection);
+    </script>
+
+</body>
+</html>

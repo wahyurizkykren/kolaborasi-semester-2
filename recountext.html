@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey of Wahyu - Recount Text</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scroll-behavior: smooth; 
+        }
+        
+        .bg-maroon-gradient {
+            background: linear-gradient(135deg, #2d0606 0%, #000000 100%);
+        }
+
+        .glow-text {
+            color: #fff;
+            text-shadow: 0 0 10px #fb7185, 0 0 20px #e11d48;
+        }
+
+        .glow-text-rose {
+            text-shadow: 0 0 8px rgba(244, 63, 94, 0.6);
+        }
+
+        /* Custom Timeline Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #f43f5e, #450a0a);
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white bg-maroon-gradient min-h-screen">
+
+    <header class="container mx-auto px-6 py-8 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-rose-500 hover:text-rose-400 transition group">
+            <span class="transform group-hover:-translate-x-1 transition-transform">➔</span> Kembali ke Portfolio
+        </a>
+        <div class="text-xl font-bold text-rose-500 tracking-wider">WAHYU</div>
+    </header>
+
+    <section class="py-12 text-center px-6">
+        <p class="tracking-[0.4em] text-rose-500 text-xs font-bold uppercase mb-3 animate-pulse">My Story</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 glow-text uppercase">
+            The Journey of <br class="md:hidden"> Building My Digital Portfolio
+        </h1>
+        <div class="w-24 h-1 bg-rose-600 mx-auto rounded-full shadow-[0_0_10px_#e11d48]"></div>
+    </section>
+
+    <main class="container mx-auto px-6 py-12 max-w-5xl relative timeline-line">
+
+        <div class="relative flex flex-col md:flex-row my-12 group" data-aos="fade-up" data-aos-duration="1000">
+            <div class="absolute left-0 md:left-1/2 transform -translateX-1/2 w-10 h-10 bg-rose-600 rounded-full border-4 border-black flex items-center justify-center z-10 shadow-[0_0_15px_#e11d48] md:-translate-x-1/2">
+                <span class="text-sm">📍</span>
+            </div>
+            
+            <div class="w-full md:w-1/2"></div>
+            
+            <div class="w-full md:w-1/2 pl-12 md:pl-8">
+                <div class="bg-white/5 p-6 md:p-8 rounded-2xl border border-rose-900/20 backdrop-blur-sm shadow-xl group-hover:bg-white/10 group-hover:border-rose-500/30 transition-all duration-300">
+                    <span class="px-3 py-1 bg-rose-950 text-rose-400 text-xs font-bold rounded-full border border-rose-800 uppercase tracking-widest block w-fit mb-3">
+                        Orientation
+                    </span>
+                    <p class="text-gray-300 leading-relaxed text-base">
+                        A few months ago, I realized that as a Software Engineering student, I needed a place to showcase my projects. My name is <strong class="text-white glow-text-rose">Wahyu Rizky Setia Ramadhani</strong>, a student at SMKN 1 Tengaran. I decided to build my own digital portfolio website from scratch because I wanted it to look professional and represent my identity as a programmer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row-reverse my-12 group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="absolute left-0 md:left-1/2 transform -translateX-1/2 w-10 h-10 bg-rose-600 rounded-full border-4 border-black flex items-center justify-center z-10 shadow-[0_0_15px_#e11d48] md:-translate-x-1/2">
+                <span class="text-sm">⚡</span>
+            </div>
+            
+            <div class="w-full md:w-1/2"></div>
+            
+            <div class="w-full md:w-1/2 pl-12 md:pl-0 md:pr-8">
+                <div class="bg-white/5 p-6 md:p-8 rounded-2xl border border-rose-900/20 backdrop-blur-sm shadow-xl group-hover:bg-white/10 group-hover:border-rose-500/30 transition-all duration-300">
+                    <span class="px-3 py-1 bg-rose-950 text-rose-400 text-xs font-bold rounded-full border border-rose-800 uppercase tracking-widest block w-fit mb-4">
+                        Events
+                    </span>
+                    <div class="space-y-4 text-gray-300 leading-relaxed text-base">
+                        <p>
+                            I started by choosing the right tools. I decided to use <span class="text-rose-400 font-semibold">Tailwind CSS</span> because I wanted a modern and responsive design. At first, I struggled with the layout. I spent a lot of time experimenting with colors until I found the perfect combination: a dark theme with maroon and rose gradients. It looked bold and elegant at the same time.
+                        </p>
+                        <p>
+                            After the design was ready, I moved on to the features. I added an "About Me" section to tell people that I am from class X PPLG 2. I also created a "Skills" section with animated progress bars for HTML, CSS, and JavaScript.
+                        </p>
+                        <p>
+                            One of the most exciting moments was when I added the "My Services" cards. I applied a floating animation to them. It felt amazing to see my code come to life. However, it wasn't always easy. I faced a bug where my navigation menu wouldn't open on mobile phones. I had to stay up late and carefully check my JavaScript logic until I finally fixed it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative flex flex-col md:flex-row my-12 group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="absolute left-0 md:left-1/2 transform -translateX-1/2 w-10 h-10 bg-rose-600 rounded-full border-4 border-black flex items-center justify-center z-10 shadow-[0_0_15px_#e11d48] md:-translate-x-1/2">
+                <span class="text-sm">✨</span>
+            </div>
+            
+            <div class="w-full md:w-1/2"></div>
+            
+            <div class="w-full md:w-1/2 pl-12 md:pl-8">
+                <div class="bg-white/5 p-6 md:p-8 rounded-2xl border border-rose-900/20 backdrop-blur-sm shadow-xl group-hover:bg-white/10 group-hover:border-rose-500/30 transition-all duration-300">
+                    <span class="px-3 py-1 bg-rose-950 text-rose-400 text-xs font-bold rounded-full border border-rose-800 uppercase tracking-widest block w-fit mb-3">
+                        Re-Orientation
+                    </span>
+                    <p class="text-gray-300 leading-relaxed text-base">
+                        After days of hard work, I finally finished the website. I, Wahyu, felt a great sense of accomplishment when I saw my projects, like the furniture workshop and the ticket purchasing design, displayed beautifully on the site. This project taught me that <strong class="text-white glow-text-rose">persistence and attention to detail</strong> are the most important things in software engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-12 text-center border-t border-white/5 text-gray-500 text-sm mt-12">
+        <p>&copy; 2026 Wahyu Portofolio. Built with Tailwind CSS.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            easing: 'ease-out-back'
+        });
+    </script>
+</body>
+</html>
